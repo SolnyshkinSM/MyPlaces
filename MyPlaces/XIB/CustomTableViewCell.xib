@@ -59,6 +59,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="imagePlace" destination="INu-aZ-6f5" id="UH4-pz-YBH"/>
+                <outlet property="locationPlace" destination="9OW-BU-bYc" id="HiZ-ge-WWy"/>
                 <outlet property="namePlace" destination="lFe-Rh-SCf" id="sdM-Z0-gOq"/>
                 <outlet property="typePlace" destination="593-cp-XQX" id="8Rv-ze-IhE"/>
             </connections>

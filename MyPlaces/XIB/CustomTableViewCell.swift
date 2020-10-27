@@ -11,6 +11,7 @@ import UIKit
 class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet var imagePlace: UIImageView!
+    @IBOutlet var locationPlace: UILabel!
     @IBOutlet var namePlace: UILabel!
     @IBOutlet var typePlace: UILabel!    
     

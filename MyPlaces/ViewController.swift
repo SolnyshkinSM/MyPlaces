@@ -10,12 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let restaurantNames = [
-        "Burger Heroes", "Kitchen", "Bonsai", "Дастархан",
-        "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes",
-        "Speak Easy", "Morris Pub", "Вкусные истории",
-        "Классик", "Love&Life", "Шок", "Бочка"
-    ]
+    let places = Place.getPlaces()
 
     @IBOutlet var masterTableView: UITableView!
     
@@ -34,22 +29,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantNames.count
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
-        cell.namePlace.text = restaurantNames[indexPath.row]
-        cell.imagePlace.image = UIImage(named: restaurantNames[indexPath.row])
+        let place = places[indexPath.row]
+        cell.namePlace.text = place.name
+        cell.locationPlace.text = place.location
+        cell.typePlace.text = place.type
+        cell.imagePlace.image = UIImage(named: place.image)
         cell.imagePlace.layer.cornerRadius = cell.imagePlace.frame.size.height / 2
         cell.imagePlace.clipsToBounds = true
         return cell
-    }
-    
-    // MARK: - UITableViewDelegate
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
+    }    
     
 }
